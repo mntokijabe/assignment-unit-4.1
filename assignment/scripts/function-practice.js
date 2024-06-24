@@ -91,17 +91,24 @@ console.log(`Is "boots" in the array?`,find("boots",["I", "like","to","wear","sh
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
  return letter.toUpperCase() === string.charAt(0).toUpperCase() ?  true : false
-}
+}  //end isFirstLetter
 
 console.log(isFirstLetter("A","a moment in time"));
+
 
 // 9. Function to return the sum of all numbers in an array
 function sumAll(array) {
   let sum = 0;
   // TODO: loop to add items
-
+  for (i = 0; i < array.length; i++){
+    sum += array[i];
+  }  //end sum loop
   // TODO: return the sum
-}
+  return sum;
+}  // end sumAll
+
+console.log(`The sum of the array values is:`, sumAll([1,3,5,7,-10]));
+
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
