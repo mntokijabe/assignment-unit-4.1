@@ -67,8 +67,16 @@ console.log('The last member of the array is:', getLast([3,5,-1,12]));
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find(value, array) {
+  let foundIt = false;
+  for(i = 0; i < array.length; i++){
+    if(value === array[i]){
+      foundIt = true}  // end if
+    }  //end for loop
+  return foundIt;
+}  //end find
 
-}
+console.log(`Is "boots" in the array?`,find("boots",["I", "like","to","wear","shoes"]));
+
 
 // ----------------------
 // Stretch Goals
