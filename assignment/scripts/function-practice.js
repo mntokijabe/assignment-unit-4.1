@@ -42,12 +42,16 @@ function multiplyThree(a,b,c) {
 //    or greater than zero, and false otherwise
 function isPositive(number) {
   if (number > 0) {
-    return;
+    return true;
   }
-  return;
-}
+  return false;
+}  //end isPositive
+
 // Call the function to test each outcome (true & false) 
 // Write a separate console.log statement for each outcome
+console.log('15 is positive?',isPositive(15));
+console.log('0 is positive?',isPositive(0));
+
 
 
 // 6. Function to return the _last_ item in an array. If the 
