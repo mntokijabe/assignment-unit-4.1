@@ -25,7 +25,6 @@ console.log(helloName('Elwood'));
 // 3. Function to add two numbers together & return the result
 function addNumbers(firstNumber,secondNumber) {
   return firstNumber + secondNumber;
-  // return firstNumber + secondNumber;
 } // end addNumbers
 
 console.log(`The sum of 3 and 4 is: `, addNumbers(3,4));
@@ -57,10 +56,17 @@ console.log('0 is positive?',isPositive(0));
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
 function getLast(array) {
-  return array[array.length - 1];
-}  //end getLast
+    if(array.length > 0){
+      return array[array.length - 1];
+    }  //end if
+    else {return `undefined`};
+    }  //end else
+  //end getLast
 
-console.log('The last member of the array is:', getLast([3,5,-1,12]));
+
+  console.log('The last member of the array is:', getLast([18,5,-3,21]));
+  
+
 
 
 // 7. Function to find a value in an array. Return true if the 
