@@ -90,9 +90,10 @@ console.log(`Is "boots" in the array?`,find("boots",["I", "like","to","wear","sh
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+ return letter.toUpperCase() === string.charAt(0).toUpperCase() ?  true : false
 }
 
+console.log(isFirstLetter("A","a moment in time"));
 
 // 9. Function to return the sum of all numbers in an array
 function sumAll(array) {
