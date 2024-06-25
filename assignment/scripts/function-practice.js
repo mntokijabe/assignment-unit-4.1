@@ -114,7 +114,10 @@ console.log(`The sum of the array values is:`, sumAll([1,3,5,7,-10]));
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
 let positives = [];
-
+let inputArray = prompt('Enter several numbers separated by a comma:');
+let numberArray = inputArray.split(",").map(Number);
+console.log(`You input ${numberArray}`)
+console.log(`The positive numbers in the array are`, allPositive(numberArray));
 function allPositive(array) {
   
   for (let value of array){
@@ -125,7 +128,7 @@ function allPositive(array) {
   return positives;
 }
 
-console.log(`The positive numbers in the array are`, allPositive([-6,-8,22]));
+
 
 
 
