@@ -117,21 +117,59 @@ let positives = [];
 
 function allPositive(array) {
   
-  for (i = 0; i < array.length; i++){
-    if (array[i] > 0){
-      positives.push(array[i]);
+  for (let value of array){
+    if (value > 0){
+      positives.push(value);
     } 
   } // end for loop to push positives
   return positives;
 }
 
-console.log(`The positive numbers in the array are`, allPositive([-3]));
+console.log(`The positive numbers in the array are`, allPositive([-6,-8,22]));
+
 
 
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+
+/* From codewars
+convert a string to a new string where each character in the new string is "(" if that 
+character appears only once in the original string, or ")" if that character appears 
+more than once in the original string. Ignore capitalization when determining if a 
+character is a duplicate.
+
+Examples
+
+"din"      =>  "((("
+"recede"   =>  "()()()"
+"Success"  =>  ")())())"
+"(( @"     =>  "))((" 
+*/
+
+function duplicateEncode(word){
+  // ...
+let newString = "";
+let count;
+for (i = 0; i < word.length; i++){
+  count = 0;  //reset the counter to 0 before each character is checked
+  for(p = 0; p < word.length;p++){
+    if(word.charAt(i).toLowerCase() === word.charAt(p).toLowerCase()){
+      count ++;
+    } // end if - character count
+  }  // end inside for loop - individual character check
+ 
+  if(count > 1){      //if the character occurred more than once...
+      newString = newString + ")";
+      } //end if duplicate
+    else{newString = newString + "(";
+    }  // end else - not duplicate
+  } // end inside for loop - individual character check
+  return newString;
+}  // end duplicateEncode
+
+console.log(duplicateEncode(`recede`))
 
 
 // DO NOT MODIFY
