@@ -65,7 +65,7 @@ function getLast(array) {
 
 
   console.log('The last member of the array is:', getLast([18,5,-3,21]));
-  
+  console.log(getLast([]));
 
 
 
@@ -74,7 +74,7 @@ function getLast(array) {
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find(value, array) {
   let foundIt = false;
-  for(i = 0; i < array.length; i++){
+  for(let i = 0; i < array.length; i++){
     if(value === array[i]){
       foundIt = true}  // end if
     }  //end for loop
@@ -91,6 +91,7 @@ console.log(`Is "boots" in the array?`,find("boots",["I", "like","to","wear","sh
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
  return letter.toUpperCase() === string.charAt(0).toUpperCase() ?  true : false
+    // checking similarity regardless of upper or lower case
 }  //end isFirstLetter
 
 console.log(isFirstLetter("A","a moment in time"));
@@ -100,7 +101,7 @@ console.log(isFirstLetter("A","a moment in time"));
 function sumAll(array) {
   let sum = 0;
   // TODO: loop to add items
-  for (i = 0; i < array.length; i++){
+  for (let i = 0; i < array.length; i++){
     sum += array[i];
   }  //end sum loop
   // TODO: return the sum
@@ -115,10 +116,12 @@ console.log(`The sum of the array values is:`, sumAll([1,3,5,7,-10]));
 //     return an empty array. Note: The input array should not change.
 
 let inputArray = prompt('Enter several numbers separated by a comma:');
-let numberArray = inputArray.split(",").map(Number);
-console.log(`You input ${numberArray}`)
-console.log(`The positive numbers in the array are`, allPositive(numberArray));
-function allPositive(array) {
+let numberArray = inputArray.split(",").map(Number); 
+// splits the input into individual array values and forces them to be number type
+ console.log(`You input ${numberArray}`)
+ console.log(`The positive numbers in the array are`, allPositive(numberArray));
+
+ function allPositive(array) {
   let positives = [];
   for (let value of array){
     if (value > 0){
@@ -155,9 +158,9 @@ function duplicateEncode(word){
   // ...
 let newString = "";
 let count;
-for (i = 0; i < word.length; i++){
+for (let i = 0; i < word.length; i++){
   count = 0;  //reset the counter to 0 before each character is checked
-  for(p = 0; p < word.length;p++){
+  for(let p = 0; p < word.length;p++){
     if(word.charAt(i).toLowerCase() === word.charAt(p).toLowerCase()){
       count ++;
     } // end if - character count
